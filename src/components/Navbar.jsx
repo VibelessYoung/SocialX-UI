@@ -70,7 +70,7 @@ backdrop-blur-xl
 border border-white/10 
 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] 
 rounded-b-2xl
-flex flex-col items-end gap-6 py-8
+flex flex-col items-center gap-6 py-8
 sm:hidden transition-all duration-300 mx-4"
         >
           <a href="#" className="text-white">
