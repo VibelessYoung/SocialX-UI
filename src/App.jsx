@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Feature from "./components/Feature";
 import Download from "./components/Download";
 import Subscribe from "./components/Subscribe";
+import Faq from "./components/Faq";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Feature />
       <Download />
       <Subscribe />
+      <Faq />
     </>
   );
 }
