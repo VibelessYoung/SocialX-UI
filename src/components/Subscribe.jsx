@@ -8,11 +8,19 @@ function Subscribe() {
         className="flex gap-2.5 justify-center items-center h-full"
       >
         <input
-          type="text"
+          type="email"
           placeholder="enter your email..."
           className="px-3 py-1 border border-white/50 rounded-sm outline-0"
         />
-        <button className="bg-cyan-500 px-3 py-1 rounded-sm">Subscribe</button>
+        <button
+          className="relative px-6 py-2 rounded-md text-white font-medium
+                   bg-cyan-500
+                   shadow-[0_0_15px_rgba(6,182,212,0.7)]
+                   hover:shadow-[0_0_25px_rgba(6,182,212,1)]
+                   transition duration-300"
+        >
+          Subscribe
+        </button>
       </form>
       <div className="flex gap-4 text-2xl text-white justify-center mt-10">
         <i className="fab fa-instagram hover:text-pink-500 transition"></i>
