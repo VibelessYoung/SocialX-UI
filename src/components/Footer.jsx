@@ -3,14 +3,14 @@ function Footer() {
     <footer className="bg-slate-950 text-gray-400 pt-20 pb-10 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-12">
         <div>
-          <h3 className="text-white text-xl font-bold mb-4">Brand</h3>
-          <p className="text-sm">
+          <h3 className=" text-xl font-bold mb-4 text-cyan-400">Brand</h3>
+          <p className="text-sm" dir="rtl">
             نسل جدید ارتباطات دیجیتال با امنیت و سرعت بی‌نظیر.
           </p>
         </div>
 
         <div>
-          <h4 className="text-white mb-4">محصول</h4>
+          <h4 className="text-cyan-400 mb-4">محصول</h4>
           <ul className="space-y-2">
             <li>امکانات</li>
             <li>قیمت گذاری</li>
@@ -19,7 +19,7 @@ function Footer() {
         </div>
 
         <div>
-          <h4 className="text-white mb-4">شرکت</h4>
+          <h4 className="text-cyan-400 mb-4">شرکت</h4>
           <ul className="space-y-2">
             <li>درباره ما</li>
             <li>تماس با ما</li>
