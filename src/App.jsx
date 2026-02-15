@@ -4,6 +4,7 @@ import Feature from "./components/Feature";
 import Download from "./components/Download";
 import Subscribe from "./components/Subscribe";
 import Faq from "./components/Faq";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Download />
       <Subscribe />
       <Faq />
+      <Footer />
     </>
   );
 }

@@ -1,96 +1,55 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex justify-between items-center p-5">
-      <img src="/src/assets/logo.png" alt="logo" className="w-24" />
+    <nav className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+        <h1 className="text-xl font-bold tracking-widest">LOGO</h1>
 
-      <div className="hidden sm:flex gap-6 items-center">
-        <a href="#" className="text-white hover:text-orange-500">
-          خانه
-        </a>
-        <a href="#" className="text-white hover:text-orange-500">
-          امکانات
-        </a>
-        <a href="#" className="text-white hover:text-orange-500">
-          دانلود
-        </a>
-        <a href="#" className="text-white hover:text-orange-500">
-          مشترک شوید
-        </a>
+        {/* Desktop */}
+        <div className="hidden md:flex gap-8 items-center">
+          {["خانه", "امکانات", "دانلود", "اشتراک"].map((item, i) => (
+            <a key={i} href="#" className="relative group">
+              {item}
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-cyan-400 transition-all group-hover:w-full"></span>
+            </a>
+          ))}
 
-        <button className="p-2 border border-white text-white rounded-sm text-sm">
-          آموزش بیشتر
-        </button>
-      </div>
-
-      <div className="sm:hidden text-white cursor-pointer">
-        {!isOpen ? (
-          <svg
-            onClick={() => setIsOpen(true)}
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-7"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"
-            />
-          </svg>
-        ) : (
-          <svg
-            onClick={() => setIsOpen(false)}
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="size-7"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
-        )}
-      </div>
-
-      {isOpen && (
-        <div
-          className="absolute top-20 left-0 w-full 
-bg-white/5 
-backdrop-blur-xl 
-border border-white/10 
-shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] 
-rounded-b-2xl
-flex flex-col items-center gap-6 py-8
-sm:hidden transition-all duration-300 mx-4"
-        >
-          <a href="#" className="text-white">
-            خانه
-          </a>
-          <a href="#" className="text-white">
-            امکانات
-          </a>
-          <a href="#" className="text-white">
-            دانلود
-          </a>
-          <a href="#" className="text-white">
-            مشترک شوید
-          </a>
-          <button className="p-2 border border-white text-white rounded-sm text-sm">
-            آموزش بیشتر
+          <button className="px-5 py-2 bg-cyan-500 rounded-full hover:bg-cyan-400 transition shadow-lg shadow-cyan-500/30">
+            شروع کنید
           </button>
         </div>
-      )}
-    </div>
+
+        {/* Mobile Button */}
+        <div
+          className="md:hidden cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          ☰
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden bg-black/90 backdrop-blur-xl flex flex-col items-center gap-6 py-10"
+          >
+            {["خانه", "امکانات", "دانلود", "اشتراک"].map((item, i) => (
+              <a key={i} href="#" className="text-lg">
+                {item}
+              </a>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 }
 
