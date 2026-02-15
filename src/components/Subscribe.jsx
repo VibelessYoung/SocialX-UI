@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 function Subscribe() {
   return (
     <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Fixed Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
@@ -13,10 +12,8 @@ function Subscribe() {
         }}
       />
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
 
-      {/* Content */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +48,6 @@ function Subscribe() {
           </button>
         </form>
 
-        {/* Social Icons */}
         <div className="flex gap-6 justify-center mt-12 text-2xl">
           <i className="fab fa-instagram hover:text-pink-500 transition hover:scale-125"></i>
           <i className="fab fa-telegram hover:text-sky-400 transition hover:scale-125"></i>
