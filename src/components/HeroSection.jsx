@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 function HeroSection() {
   return (
     <section className="flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 pt-40 pb-20 gap-20">
-      {/* Text */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
@@ -31,7 +30,6 @@ function HeroSection() {
         </div>
       </motion.div>
 
-      {/* Image */}
       <motion.img
         src="/src/assets/phone-header-bg.png"
         alt="phone"
