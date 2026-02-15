@@ -7,9 +7,8 @@ function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <h1 className="text-xl font-bold tracking-widest">LOGO</h1>
+        <h1 className="text-xl font-bold tracking-widest"><img src="/src/assets/logo.png" alt="logo" /></h1>
 
-        {/* Desktop */}
         <div className="hidden md:flex gap-8 items-center">
           {["خانه", "امکانات", "دانلود", "اشتراک"].map((item, i) => (
             <a key={i} href="#" className="relative group">
@@ -23,7 +22,6 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Button */}
         <div
           className="md:hidden cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
@@ -32,7 +30,6 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
